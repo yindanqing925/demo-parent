@@ -1,4 +1,4 @@
-package org.nh.gome.demo.classrela;
+package org.nh.gome.demo.classrelation;
 
 /**
  *
