@@ -17,10 +17,13 @@ package org.nh.gome.demo.classrelation;
  * 但是，如果父类中调用到了子类中的成员变量，那么这个时候（子类的构造函数还未开始），子类中的成员变量会是一个仅声明且赋默认值的变量，
  * 直到子类构造函数开始之前，才会完成子类成员变量的赋值工作
  *
+ * 在编译期，对于static final类型成员变量的引用，会全部替换成该变量的值，而不是该变量的引用
  */
 public class ClassC {
 
     public static void main(String[] args) {
+        int cc = ClassB.e;
+        System.out.println(cc);
         new ClassB(20);
     }
 
@@ -43,6 +46,7 @@ class ClassB extends ClassA{
 
     private int a = 100;
     private static int b = 30;
+    public static final int e = 30;
 
     public ClassB(int a) {
         System.out.println(this.a);
