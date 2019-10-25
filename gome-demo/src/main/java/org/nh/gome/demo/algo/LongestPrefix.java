@@ -2,7 +2,7 @@ package org.nh.gome.demo.algo;
 
 /**
  * @program: LongestPrefix.java
- * @description:
+ * @description: 寻找字符串数组中最长前缀
  * @author: yindanqing
  * @create: 2019/10/24 19:52
  */
