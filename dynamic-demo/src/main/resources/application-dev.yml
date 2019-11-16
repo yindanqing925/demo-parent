@@ -1,0 +1,40 @@
+localName: dy-ds-dev
+
+dynamic:
+  datasource:
+    #主数据源
+    master:
+      url: jdbc:mysql://192.168.165.128:3306/nh?useUnicode=true&characterEncoding=UTF8
+      driver: com.mysql.jdbc.Driver
+      username: nh
+      password: 123456
+      initSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,slf4j
+    #从数据源1
+    slave1:
+      url: jdbc:mysql://192.168.165.128:3306/mvc?useUnicode=true&characterEncoding=UTF8
+      driver: com.mysql.jdbc.Driver
+      username: nh
+      password: 123456
+      initSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,slf4j
