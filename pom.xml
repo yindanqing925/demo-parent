@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -125,7 +129,6 @@
         <module>xyy-demo</module>
         <module>gome-demo</module>
         <module>dynamic-demo</module>
-        <module>boot-demo</module>
     </modules>
 
 
@@ -170,5 +173,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>local</id>
+            <name>local</name>
+            <url>file:///d:/apache/maven/repository/</url>
+            <layout>default</layout>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
 
 </project>
