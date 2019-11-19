@@ -14,6 +14,6 @@ public interface UserService {
     /**
      * 1234512312
      */
-    int insertbatch(Collection<User> users);
+    int insertBatch(Collection<User> users);
 
 }

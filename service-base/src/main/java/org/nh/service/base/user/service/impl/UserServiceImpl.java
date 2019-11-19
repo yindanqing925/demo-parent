@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int insertbatch(Collection<User> users) {
+    public int insertBatch(Collection<User> users) {
         return userInfoDao.insertbatch(users);
     }
 }
