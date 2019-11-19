@@ -31,7 +31,7 @@ public class DataSourceConfig {
     static final String DATASOURCE = SIGN + "DataSource";
     static final String TRANSACTION_MANAGER = SIGN + "TransactionManager";
     static final String SQL_SESSION_FACTORY = SIGN + "SqlSessionFactory";
-    static final String PACKAGE = "org.nh." + SIGN + ".**.dao";
+    static final String PACKAGE = "org.nh.service.base.**.dao";
     static final String MAPPER_LOCATION = "classpath*:org/nh/" + SIGN + "/**/*.xml";
 
     /**
