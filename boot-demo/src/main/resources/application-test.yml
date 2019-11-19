@@ -1,0 +1,5 @@
+#configs:
+#  datasource:
+#    url: jdbc:mysql://192.168.165.128/nh?useUnicode=true&characterEncoding=utf-8
+#    username: nh
+#    password: 123456

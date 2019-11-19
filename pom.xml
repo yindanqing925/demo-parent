@@ -78,6 +78,11 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.nh</groupId>
+                <artifactId>service-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>2.10.1</version>
@@ -129,6 +134,8 @@
         <module>xyy-demo</module>
         <module>gome-demo</module>
         <module>dynamic-demo</module>
+        <module>boot-demo</module>
+        <module>service-base</module>
     </modules>
 
 
@@ -173,15 +180,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>local</id>
-            <name>local</name>
-            <url>file:///d:/apache/maven/repository/</url>
-            <layout>default</layout>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-    </repositories>
 
 </project>

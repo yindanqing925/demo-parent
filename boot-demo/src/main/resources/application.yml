@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-boot
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: classpath:/views/
+    suffix: .html
+
+
+server:
+  port: 6601
+
+#configs:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml
