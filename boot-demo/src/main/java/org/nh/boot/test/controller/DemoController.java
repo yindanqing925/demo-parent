@@ -48,37 +48,4 @@ public class DemoController {
         throw new BusinessException(1999, "businessException1999");
     }
 
-    public static void main(String[] args) {
-        Map<String, Man> transactionalCaches = new HashMap();
-        transactionalCaches.computeIfAbsent("1", Man::new);
-        ManFactory runnable = Man::new;
-        ManFactory2 runnable2 = Man::new;
-    }
-
 }
-
-interface ManFactory{
-
-    Man getMan(String age);
-}
-
-interface ManFactory2{
-
-    Man getMan();
-}
-
-@Setter
-@Getter
-class Man{
-
-    private String name;
-
-    private String age;
-
-    public Man(String age) {
-        this.age = age;
-    }
-    public Man() {
-    }
-}
-
