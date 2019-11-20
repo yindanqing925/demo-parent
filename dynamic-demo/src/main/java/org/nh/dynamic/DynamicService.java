@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author yindanqing
@@ -11,6 +12,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @description
  */
 @SpringBootApplication
+@ComponentScan(value = {"org.nh"})
 public class DynamicService {
 
     private static final Logger logger = LoggerFactory.getLogger(DynamicService.class);

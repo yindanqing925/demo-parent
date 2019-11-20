@@ -1,8 +1,8 @@
 package org.nh.dynamic.user.service;
 
-import org.nh.dynamic.user.model.User;
+import org.nh.service.base.user.model.User;
 
-public interface UserService {
+public interface UserDynamicService {
 
     User getUserInfoById(Integer id);
 

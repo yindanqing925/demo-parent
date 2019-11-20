@@ -42,8 +42,9 @@ public class DynamicDataSourceConfig {
     static final String DATASOURCE = SIGN + "DataSource";
     static final String TRANSACTION_MANAGER = SIGN + "TransactionManager";
     public static final String SQL_SESSION_FACTORY = SIGN + "SqlSessionFactory";
-    public static final String PACKAGE = "org.nh." + SIGN + ".**.dao";
-    static final String MAPPER_LOCATION = "classpath*:org/nh/" + SIGN + "/**/*.xml";
+    //可以考虑自定义下面的参数
+    public static final String PACKAGE = "org.nh.**.dao";
+    static final String MAPPER_LOCATION = "classpath*:org/nh/**/*.xml";
 
     @Primary
     @Bean(name = DATASOURCE)

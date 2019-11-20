@@ -4,8 +4,8 @@ import org.nh.common.web.ResponseResult;
 import org.nh.dynamic.config.datasource.way1.annotation.DataSource;
 import org.nh.dynamic.config.datasource.way1.pattern.DataSourceMode;
 import org.nh.dynamic.config.datasource.way1.pattern.DataSourceType;
-import org.nh.dynamic.user.model.User;
-import org.nh.dynamic.user.service.UserService;
+import org.nh.dynamic.user.service.UserDynamicService;
+import org.nh.service.base.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserDynamicService userService;
 
     @RequestMapping(value = "/getUserById/poll/{id}", method = RequestMethod.GET)
     @DataSource

@@ -4,10 +4,10 @@ dynamic:
   datasource:
     #主数据源
     master:
-      url: jdbc:mysql://192.168.165.128:3306/nh?useUnicode=true&characterEncoding=UTF8
+      url: jdbc:mysql://cdb-1v2wt3os.bj.tencentcdb.com:10243/nh?useUnicode=true&characterEncoding=UTF8
       driver: com.mysql.jdbc.Driver
-      username: nh
-      password: 123456
+      username: user_dev
+      password: user_dev_nh
       initSize: 5
       minIdle: 5
       maxActive: 20
@@ -22,10 +22,10 @@ dynamic:
       filters: stat,wall,slf4j
     #从数据源1
     slave1:
-      url: jdbc:mysql://192.168.165.128:3306/mvc?useUnicode=true&characterEncoding=UTF8
+      url: jdbc:mysql://cdb-1v2wt3os.bj.tencentcdb.com:10243/mvc?useUnicode=true&characterEncoding=UTF8
       driver: com.mysql.jdbc.Driver
-      username: nh
-      password: 123456
+      username: user_dev
+      password: user_dev_nh
       initSize: 5
       minIdle: 5
       maxActive: 20

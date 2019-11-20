@@ -2,9 +2,9 @@ package org.nh.dynamic.user.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.nh.dynamic.user.dao.UserDao;
-import org.nh.dynamic.user.model.User;
-import org.nh.dynamic.user.service.UserService;
+import org.nh.dynamic.user.service.UserDynamicService;
+import org.nh.service.base.user.dao.UserDao;
+import org.nh.service.base.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -15,7 +15,7 @@ import java.util.Date;
 
 @Service
 @Slf4j
-public class UserServiceImpl implements UserService {
+public class UserDynamicServiceImpl implements UserDynamicService {
 
     @Autowired
     private UserDao userDao;
