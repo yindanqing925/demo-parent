@@ -1,4 +1,4 @@
-package org.nh.boot.test.equals;
+package org.nh.xyy.demo.classrelation.equals;
 
 import java.util.HashMap;
 import java.util.HashSet;
