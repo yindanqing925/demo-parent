@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
     private Integer id;
 
-    private String usernname;
+    private String username;
 
     private String password;
 
@@ -15,7 +15,7 @@ public class User {
 
     private Date updated;
 
-    private Integer adress;
+    private Integer address;
 
     private String phone;
 
@@ -29,12 +29,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsernname() {
-        return usernname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernname(String usernname) {
-        this.usernname = usernname == null ? null : usernname.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {
@@ -69,12 +69,12 @@ public class User {
         this.updated = updated;
     }
 
-    public Integer getAdress() {
-        return adress;
+    public Integer getAddress() {
+        return address;
     }
 
-    public void setAdress(Integer adress) {
-        this.adress = adress;
+    public void setAddress(Integer address) {
+        this.address = address;
     }
 
     public String getPhone() {

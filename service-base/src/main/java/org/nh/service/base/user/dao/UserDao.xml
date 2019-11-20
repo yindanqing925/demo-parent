@@ -2,77 +2,75 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="org.nh.service.base.user.dao.UserDao" >
   <resultMap id="BaseResultMap" type="org.nh.service.base.user.model.User" >
-    <id column="ID" property="id" jdbcType="INTEGER" />
-    <result column="USERNNAME" property="usernname" jdbcType="VARCHAR" />
-    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
-    <result column="BALANCE" property="balance" jdbcType="DOUBLE" />
-    <result column="CREATED" property="created" jdbcType="TIMESTAMP" />
-    <result column="UPDATED" property="updated" jdbcType="TIMESTAMP" />
-    <result column="ADRESS" property="adress" jdbcType="INTEGER" />
-    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
-    <result column="TIPS" property="tips" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="balance" property="balance" jdbcType="DOUBLE" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="address" property="address" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="tips" property="tips" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, USERNNAME, PASSWORD, BALANCE, CREATED, UPDATED, ADRESS, PHONE, TIPS
+    id, username, password, balance, created, updated, address, phone, tips
   </sql>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from user
-    where ID = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
-    where ID = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="org.nh.service.base.user.model.User" >
-    insert into user (ID, USERNNAME, PASSWORD, 
-      BALANCE, CREATED, UPDATED, 
-      ADRESS, PHONE, TIPS
+    insert into user (id, username, password, balance, created, updated, address, phone, tips
       )
-    values (#{id,jdbcType=INTEGER}, #{usernname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{balance,jdbcType=DOUBLE}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
-      #{adress,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{tips,jdbcType=VARCHAR}
+      #{address,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{tips,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.nh.service.base.user.model.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        ID,
+        id,
       </if>
-      <if test="usernname != null" >
-        USERNNAME,
+      <if test="username != null" >
+        username,
       </if>
       <if test="password != null" >
-        PASSWORD,
+        password,
       </if>
       <if test="balance != null" >
-        BALANCE,
+        balance,
       </if>
       <if test="created != null" >
-        CREATED,
+        created,
       </if>
       <if test="updated != null" >
-        UPDATED,
+        updated,
       </if>
       <if test="adress != null" >
-        ADRESS,
+        address,
       </if>
       <if test="phone != null" >
-        PHONE,
+        phone,
       </if>
       <if test="tips != null" >
-        TIPS,
+        tips,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="usernname != null" >
-        #{usernname,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
@@ -86,8 +84,8 @@
       <if test="updated != null" >
         #{updated,jdbcType=TIMESTAMP},
       </if>
-      <if test="adress != null" >
-        #{adress,jdbcType=INTEGER},
+      <if test="address != null" >
+        #{address,jdbcType=INTEGER},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
@@ -100,56 +98,56 @@
   <update id="updateByPrimaryKeySelective" parameterType="org.nh.service.base.user.model.User" >
     update user
     <set >
-      <if test="usernname != null" >
-        USERNNAME = #{usernname,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
-        PASSWORD = #{password,jdbcType=VARCHAR},
+        password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="balance != null" >
-        BALANCE = #{balance,jdbcType=DOUBLE},
+        balance = #{balance,jdbcType=DOUBLE},
       </if>
       <if test="created != null" >
-        CREATED = #{created,jdbcType=TIMESTAMP},
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
       <if test="updated != null" >
-        UPDATED = #{updated,jdbcType=TIMESTAMP},
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
-      <if test="adress != null" >
-        ADRESS = #{adress,jdbcType=INTEGER},
+      <if test="address != null" >
+        address = #{address,jdbcType=INTEGER},
       </if>
       <if test="phone != null" >
-        PHONE = #{phone,jdbcType=VARCHAR},
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="tips != null" >
-        TIPS = #{tips,jdbcType=VARCHAR},
+        tips = #{tips,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="org.nh.service.base.user.model.User" >
     update user
-    set USERNNAME = #{usernname,jdbcType=VARCHAR},
-      PASSWORD = #{password,jdbcType=VARCHAR},
-      BALANCE = #{balance,jdbcType=DOUBLE},
-      CREATED = #{created,jdbcType=TIMESTAMP},
-      UPDATED = #{updated,jdbcType=TIMESTAMP},
-      ADRESS = #{adress,jdbcType=INTEGER},
-      PHONE = #{phone,jdbcType=VARCHAR},
-      TIPS = #{tips,jdbcType=VARCHAR}
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=DOUBLE},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      address = #{address,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      tips = #{tips,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 
   <insert id="insertbatch" parameterType="java.util.Collection">
-    insert into user (ID, USERNNAME, PASSWORD,
-      BALANCE, CREATED, UPDATED,
-      ADRESS, PHONE, TIPS
+    insert into user (id, username, password,
+      balance, created, updated,
+      address, phone, tips
       )
     values
      <foreach collection="users" index="index" item="item" separator=",">
-       (#{item.id,jdbcType=INTEGER}, #{item.usernname,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR},
+       (#{item.id,jdbcType=INTEGER}, #{item.username,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR},
        #{item.balance,jdbcType=DOUBLE}, #{item.created,jdbcType=TIMESTAMP}, #{item.updated,jdbcType=TIMESTAMP},
-       #{item.adress,jdbcType=INTEGER}, #{item.phone,jdbcType=VARCHAR}, #{item.tips,jdbcType=VARCHAR}
+       #{item.address,jdbcType=INTEGER}, #{item.phone,jdbcType=VARCHAR}, #{item.tips,jdbcType=VARCHAR}
        )
      </foreach>
   </insert>
