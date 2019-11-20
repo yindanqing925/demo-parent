@@ -6,3 +6,7 @@ spring:
 
 server:
   port: 6600
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml
