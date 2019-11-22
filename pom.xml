@@ -141,6 +141,7 @@
         <module>dynamic-demo</module>
         <module>boot-demo</module>
         <module>service-base</module>
+        <module>async-demo</module>
     </modules>
 
 

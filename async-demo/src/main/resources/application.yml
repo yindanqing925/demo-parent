@@ -1,0 +1,12 @@
+spring:
+#  profiles:
+#    active: dev
+  application:
+    name: async
+
+server:
+  port: 6602
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml

@@ -13,12 +13,12 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan(value = {"org.nh"})
-public class DynamicService {
+public class DynamicServiceMain {
 
-    private static final Logger logger = LoggerFactory.getLogger(DynamicService.class);
+    private static final Logger logger = LoggerFactory.getLogger(DynamicServiceMain.class);
 
     public static void main(String[] args) {
-        SpringApplicationBuilder builder = new SpringApplicationBuilder(DynamicService.class);
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(DynamicServiceMain.class);
         builder.run(args);
         logger.info("DynamicService启动成功.");
     }
