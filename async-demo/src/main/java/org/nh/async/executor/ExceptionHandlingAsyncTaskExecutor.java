@@ -31,16 +31,16 @@ public class ExceptionHandlingAsyncTaskExecutor implements AsyncTaskExecutor {
     }
 
     @Override
-    public Future submit(Runnable task) {
+    public Future<?> submit(Runnable task) {
         return executor.submit(createWrappedRunnable(task));
     }
 
     @Override
-    public Future submit(final Callable task) {
+    public <T> Future<T> submit(final Callable<T> task) {
         return executor.submit(createCallable(task));
     }
 
-    private <T> Callable createCallable(final Callable<T> task) {
+    private <T> Callable<T> createCallable(final Callable<T> task) {
         return () -> {
             try {
                 return task.call();

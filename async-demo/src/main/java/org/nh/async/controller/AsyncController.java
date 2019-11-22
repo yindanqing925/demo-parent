@@ -1,5 +1,7 @@
 package org.nh.async.controller;
 
+import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.nh.async.service.AsyncService;
 import org.nh.common.web.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import java.util.concurrent.Future;
  */
 @RestController
 @RequestMapping(value = "/async")
+@Slf4j
 public class AsyncController {
 
     @Autowired
@@ -28,7 +31,9 @@ public class AsyncController {
     public ResponseResult<String> getName() throws InterruptedException, ExecutionException {
         asyncService.asyncMethodWithVoidReturnType();
         Future<String> future = asyncService.asyncMethodWithReturnType();
-        return new ResponseResult<String>(future.get());
+        ResponseResult<String> responseResult = new ResponseResult<>(future.get());
+        log.info(JSON.toJSONString(responseResult));
+        return responseResult;
     }
 
 }

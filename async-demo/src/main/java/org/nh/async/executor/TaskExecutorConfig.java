@@ -15,16 +15,19 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 public class TaskExecutorConfig {
 
-    private static final int MAX_POOL_SIZE = 50;
+    private static final int MAX_POOL_SIZE = 30;
 
-    private static final int CORE_POOL_SIZE = 20;
+    private static final int CORE_POOL_SIZE = 5;
 
     @Bean
     public TaskExecutor taskExecutor(){
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setMaxPoolSize(MAX_POOL_SIZE);
         taskExecutor.setCorePoolSize(CORE_POOL_SIZE);
-        taskExecutor.setThreadNamePrefix("async-task-thread-pool");
+        taskExecutor.setThreadNamePrefix("async-task-executor-");
+        taskExecutor.setQueueCapacity(Integer.MAX_VALUE);
+        taskExecutor.setKeepAliveSeconds(30*1000);
+        //taskExecutor.setDaemon();
         taskExecutor.initialize();
         return new ExceptionHandlingAsyncTaskExecutor(taskExecutor);
     }
