@@ -1,0 +1,20 @@
+shiro:
+  datasource:
+    #主数据源
+    master:
+      url: jdbc:mysql://cdb-1v2wt3os.bj.tencentcdb.com:10243/shiro?useUnicode=true&characterEncoding=UTF8
+      driver: com.mysql.jdbc.Driver
+      username: shr
+      password: 39*DARw5ClmArE!x
+      initSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,slf4j

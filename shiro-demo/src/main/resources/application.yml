@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: shiro
+
+server:
+  port: 6603
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml

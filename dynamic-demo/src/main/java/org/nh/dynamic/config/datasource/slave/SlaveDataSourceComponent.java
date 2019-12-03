@@ -2,7 +2,7 @@ package org.nh.dynamic.config.datasource.slave;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.nh.dynamic.config.datasource.extend.DataSourceProperties;
+import org.nh.common.datasource.extend.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 

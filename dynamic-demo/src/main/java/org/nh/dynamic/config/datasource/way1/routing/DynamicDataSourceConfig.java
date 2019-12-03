@@ -3,7 +3,7 @@ package org.nh.dynamic.config.datasource.way1.routing;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.nh.dynamic.config.datasource.common.DataSourceUtil;
+import org.nh.common.datasource.common.DataSourceUtil;
 import org.nh.dynamic.config.datasource.master.MasterDataSourceComponent;
 import org.nh.dynamic.config.datasource.slave.SlaveDataSourceComponent;
 import org.nh.dynamic.config.datasource.way1.pattern.DataSourceType;

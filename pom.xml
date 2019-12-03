@@ -132,6 +132,11 @@
                 <artifactId>jaxrpc</artifactId>
                 <version>1.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>1.4.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -142,6 +147,7 @@
         <module>boot-demo</module>
         <module>service-base</module>
         <module>async-demo</module>
+        <module>shiro-demo</module>
     </modules>
 
 
