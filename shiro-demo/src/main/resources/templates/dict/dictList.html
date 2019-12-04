@@ -1,4 +1,12 @@
-
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>dictList</title>
+</head>
+<body>
 <div id="toolbar" class="btn-group">
     <shiro:hasPermission name="dict:add">
     <button id="btn_add" type="button" class="btn btn-default">
@@ -170,7 +178,7 @@
                 alert("请选中一行数据");
             } else {
                 var dictId = selectedLine[0].id;
-                var url = "/dict/edit/" + dictId;
+                var url = "/dict/dictEdit/" + dictId;
                 $('#container').load(url);
             }
         });
@@ -180,7 +188,7 @@
         });
 
         $('#btn_add').click(function () {
-            var url = "/dict/add";
+            var url = "/dict/dictAdd";
             $('#container').load(url);
         });
 
@@ -228,3 +236,5 @@
         });
     })
 </script>
+</body>
+</html>

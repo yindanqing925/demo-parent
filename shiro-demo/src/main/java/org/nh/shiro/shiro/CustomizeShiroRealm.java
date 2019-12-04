@@ -97,7 +97,7 @@ public class CustomizeShiroRealm extends AuthorizingRealm {
             List<String> roleStrList = roleList.stream().map(AuthRole::getName).collect(Collectors.toList());
             List<String> permissionStrList = permissionList.stream().map(AuthPermission::getName).collect(Collectors.toList());
             authUser.setRoleList(roleStrList);
-            authUser.setPermissionList(roleStrList);
+            authUser.setPermissionList(permissionStrList);
             return new SimpleAuthenticationInfo(authUser, authUser.getPswd(), getName());
         }
         return null;
