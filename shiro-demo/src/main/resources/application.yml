@@ -3,6 +3,20 @@ spring:
     active: dev
   application:
     name: shiro
+  mvc:
+    throw-exception-if-no-handler-found: false
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+    servlet:
+      content-type: text/html
 
 server:
   port: 6603

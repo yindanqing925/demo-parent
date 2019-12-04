@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>trcs-backend</title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+
+    <link rel="stylesheet"  th:href="@{/static/css/bootstrap.min.css}"/>
+    <link rel="stylesheet"  th:href="@{/static/css/bootstrapValidator.min.css}"/>
+    <link rel="stylesheet"  th:href="@{/static/css/bootstrap-datetimepicker.css}"/>
+
+
+
+    <link rel="stylesheet"  th:href="@{/static/css/font-awesome.css}"/>
+
+    <link rel="stylesheet"  th:href="@{/static/css/ionicons.css}"/>
+
+    <link rel="stylesheet"  th:href="@{/static/css/AdminLTE.css}"/>
+    <link rel="stylesheet"  th:href="@{/static/css/skins/skin-blue.min.css}"/>
+
+    <link  th:href="@{/static/css/bootstrap-table.css}" rel="stylesheet"/>
+    <link  th:href="@{/static/css/jquery.treegrid.css}" rel="stylesheet"/>
+    <link  th:href="@{/static/css/bootstrap-tab.css}" rel="stylesheet"/>
+    <link  th:href="@{/static/css/myCommon.css}" rel="stylesheet"/>
+
+
+    <script  th:src="@{/static/js/jquery-3.3.1.min.js}"></script>
+    <script  th:src="@{/static/js/jquery.form.js}"></script>
+    <script  th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script  th:src="@{/static/js/adminlte.js}"></script>
+
+    <script  th:src="@{/static/js/bootstrapValidator.min.js}"></script>
+    <script  th:src="@{/static/js/bootstrap-datetimepicker.js}"></script>
+    <script  th:src="@{/static/js/bootstrap-datetimepicker.zh-TW.js}"></script>
+
+    <script  th:src="@{/static/js/bootstrap-table.js}"></script>
+    <script  th:src="@{/static/js/bootstrap-table-zh-CN.js}"></script>
+    <script  th:src="@{/static/js/bootstrap-table-treegrid.js}"></script>
+    <script  th:src="@{/static/js/jquery.treegrid.min.js}"></script>
+
+    <script  th:src="@{/static/js/bootstrap-tab.js}"></script>
+
+    <script  th:src="@{/static/js/bootstrap-table-export.js}"></script>
+    <script  th:src="@{/static/js/tableExport.min.js}"></script>
+    <script  th:src="@{/static/js/FileSaver.min.js}"></script>
+    <script  th:src="@{/static/js/xlsx.core.min.js}"></script>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+
+        <a href="#" class="logo">
+            <span class="logo-lg"><b>trcs-backend</b></span>
+        </a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="height: 50px;">
+                            <img src="../../static/img/1.png" th:src="@{/static/img/1.png}" class="user-image" alt="User Image"/>
+                            <span class="hidden-xs" th:text="${userName}">用户名</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="../../static/img/1.png" th:src="@{/static/img/1.png}" class="img-circle" alt="User Image"/>
+
+                                <p>
+                                    <span th:text="${userName}">用户描述</span>
+                                    <small>暂无信息</small>
+                                </p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <a href="#" th:href="@{/login/logout}" class="btn btn-default btn-flat">登 出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+
+        <section class="sidebar">
+
+            <div class="user-panel">
+                <div class="pull-left info">
+                    <p th:text="${userName}">用户名</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header"><span class="fa-lg">系统菜单</span></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>字典管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                         </span>
+                    </a>
+                    <shiro:hasPermission name="dict:list">
+                        <ul class="treeview-menu">
+                            <li><a href="javascript:void(0)" class="myLeftMenu" id="dictListMenu" th:href="@{/dict/list}">字典列表</a></li>
+                        </ul>
+                    </shiro:hasPermission>
+                </li>
+
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <section class="content container-fluid">
+            <div id="container">
+                trcs-backend
+            </div>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            power by trcs
+        </div>
+        <strong>trcs-backend</strong>
+    </footer>
+
+</div>
+
+<script>
+
+
+    $(function () {
+        $('ul.sidebar-menu li').click(function () {
+            var li = $('ul.sidebar-menu li.active');
+            li.removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.myLeftMenu').click(function (e) {
+            e.preventDefault();
+            var url=$(this).attr('href');
+            $('#container').load(url);
+
+        });
+    })
+
+</script>
+
+</body>
+</html>
