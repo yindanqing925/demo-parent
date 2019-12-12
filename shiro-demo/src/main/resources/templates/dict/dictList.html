@@ -24,7 +24,7 @@
 </table>
 
 <script type="application/javascript">
-
+/*<![CDATA[*/
     function createTimeFormat(cellval) {
         var dateVal = cellval + "";
         if (cellval != null) {
@@ -173,7 +173,7 @@
         });
 
         $('#btn_edit').click(function () {
-            var selectedLine = $table.bootstrapTable('getSelections');
+            var selectedLine = $table.bootstrapTable('getSelections') || [];
             if (selectedLine.length < 1) {
                 alert("请选中一行数据");
             } else {
@@ -235,6 +235,7 @@
             }
         });
     })
+/*]]>*/
 </script>
 </body>
 </html>
