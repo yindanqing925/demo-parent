@@ -20,7 +20,7 @@ import javax.annotation.Resource;
  * @create: 2019/12/4 14:48
  */
 @RestController
-@RequestMapping("/dict")
+@RequestMapping("/rest/dict")
 public class DictController {
 
     @Autowired

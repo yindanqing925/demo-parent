@@ -58,7 +58,7 @@
     var $table = $("#dictTable");
     $(function () {
         $table.bootstrapTable({
-            url:"/trcs/dict/findDictList",        //请求后台的URL（*）
+            //url:"/rest/dict/findDictList",        //请求后台的URL（*）
             method: 'post',                      //请求方式（*）
             contentType: "application/json;charset=UTF-8", //post方式必须设置,get方式设置application/json
             dataType: 'json',
@@ -148,7 +148,7 @@
             }
             , ajax: function (request) {
                 $.ajax({
-                    url: "/trcs/dict/findDictList",
+                    url: "/rest/dict/findDictList",
                     type: "POST",
                     dataType: "json",
                     contentType: 'application/json;charset=UTF-8',
@@ -178,62 +178,16 @@
                 alert("请选中一行数据");
             } else {
                 var dictId = selectedLine[0].id;
-                var url = "/dict/dictEdit/" + dictId;
+                var url = "/page/dict/dictEdit/" + dictId;
                 $('#container').load(url);
             }
-        });
-
-        $('#btnQuery').click(function () {
-            $table.bootstrapTable('refresh');
         });
 
         $('#btn_add').click(function () {
-            var url = "/dict/dictAdd";
+            var url = "/page/dict/dictAdd";
             $('#container').load(url);
         });
 
-        $('#btn_delete').click(function () {
-            var selectedLine = $table.bootstrapTable('getSelections');
-            if (selectedLine.length < 1) {
-                alert("请选中一行数据");
-            } else {
-                var idList = selectedLine[0].userId;
-                for (var i = 1; i < selectedLine.length; i++) {
-                    idList += ',' + selectedLine[i].userId;
-                }
-//                console.log(idList);
-
-                var deleteUrl = "/user/delete";
-                $.ajax({
-                    type: "post",
-                    url: deleteUrl,
-                    data: {userIdList: idList},
-                    dataType: "json",
-                    success: function (result) {
-//                        console.log(result);
-                        $('#container').load(result.url);
-                        $('.modal-backdrop').remove();//移除遮罩
-                        $("body").removeClass('modal-open'); //移除模态
-                    },
-                    error: function (result) {
-//                        console.log(result);
-                        alert(result.responseText);
-                    }
-                });
-
-            }
-        });
-
-        $('#btn_role').click(function () {
-            var selectedLine = $table.bootstrapTable('getSelections');
-            if (selectedLine.length < 1) {
-                alert("请选中一行数据");
-            } else {
-                var idList = selectedLine[0].userId;
-                var url = "/user/toListUserRole/" + idList;
-                $('#container').load(url);
-            }
-        });
     })
 /*]]>*/
 </script>

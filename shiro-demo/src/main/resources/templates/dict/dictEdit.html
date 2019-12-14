@@ -6,11 +6,12 @@
             </h4>
 
             <div class="panel-body">
+                <input type="hidden" name="dictId" th:value="${dict.id}" />
                 <div class="form-group">
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典类型</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="dictKey" placeholder="字典类型"
-                               th:value="${dict.dictKey}">
+                        <input type="text" class="form-control" name="dictKey" placeholder="字典类型" readonly="readonly"
+                               th:value="${dict.dictKey}" />
                     </div>
                     <label class="control-label">（输入类型是
                         字母、数字、下划线或它们的组合，最少3位，最长64位）</label>
@@ -19,9 +20,8 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典值</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="newDictValue" placeholder="字典值"
-                               th:value="${dict.dictValue}">
-                        <input type="hidden" name="oldDictValue" th:value="${dict.dictValue}">
+                        <input type="text" class="form-control" name="dictValue" placeholder="字典值"
+                               th:value="${dict.dictValue}" />
                     </div>
                     <label class="control-label">（输入类型是汉字、字母、数字、下划线或它们的组合，最长128位）</label>
                 </div>
@@ -30,7 +30,7 @@
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典注释</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="comments" placeholder="字典注释"
-                               th:value="${dict.comments}">
+                               th:value="${dict.comments}" />
                     </div>
                     <label class="control-label">字典注释</label>
                 </div>
@@ -41,10 +41,10 @@
 
                     <div class="col-sm-6">
                         <label class="radio-inline">
-                            <input type="radio" value=0 name="deleted" checked th:checked="${dict.deleted}==0? true:false" >有效
+                            <input type="radio" value="0" name="deleted" th:checked="${dict.deleted}==0? true:false" />有效
                         </label>
-                        <label class="radio-inline">`
-                            <input type="radio" value=1 name="deleted" th:checked="${dict.deleted}==1? true:false">无效
+                        <label class="radio-inline">
+                            <input type="radio" value="1" name="deleted" th:checked="${dict.deleted}==1? true:false" />无效
                         </label>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
 
     $(function () {
         $('button[name="backToList"]').click(function (e) {
-            var url="/dict/list";
+            var url="/page/dict/dictList";
             $('#container').load(url);
         });
 
@@ -147,32 +147,30 @@
 
 
         $('button[name="submit"]').click(function (e) {
-            var fallbackUrl = "/dict/list";
+            var fallbackUrl = "/page/dict/dictList";
+            var dictId = $('input[name="dictId"]').val();
             var dictKey = $('input[name="dictKey"]').val();
-            var newDictValue = $('input[name="newDictValue"]').val();
-            var oldDictValue = $('input[name="oldDictValue"]').val();
+            var dictValue = $('input[name="dictValue"]').val();
             var comments = $('input[name="comments"]').val();
             var deleted = $('input[name="deleted"]:checked').val();
-            if(dictKey==='' || newDictValue==='' || comments===''){
+            if(dictId==='' || dictKey==='' || dictValue==='' || comments===''){
                 return;
             }
             var temp = {
+                id: dictId,
                 dictKey: dictKey,
-                newDictValue: newDictValue,
-                oldDictValue: oldDictValue,
+                dictValue: dictValue,
                 comments: comments,
                 deleted: deleted
             };
             $.ajax({
                 type:"post",
-                url: "/trcs/dict/modifyTransferDict",
+                url: "/rest/dict/modifyTransferDict",
                 contentType: "application/json;charset=UTF-8",
                 data: JSON.stringify(temp),
                 dataType: "json",
                 success: function (result) {
                     $('#container').load(fallbackUrl);
-                    //window.location.href = "/index";
-                    //$("#dictListMenu").click();
                 },
                 error: function (result) {
                     $('#container').load(fallbackUrl);

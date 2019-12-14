@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典类型</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="dictKey" placeholder="字典类型" >
+                        <input type="text" class="form-control" name="dictKey" placeholder="字典类型" />
                     </div>
                     <label class="control-label">（输入类型是
                         字母、数字、下划线或它们的组合，最少3位，最长64位）</label>
@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典值</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="newDictValue" placeholder="字典值" >
+                        <input type="text" class="form-control" name="dictValue" placeholder="字典值" />
                     </div>
                     <label class="control-label">（输入类型是汉字、字母、数字、下划线或它们的组合，最长128位）</label>
                 </div>
@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label"><span style="color: red;font-weight: bold">＊</span>字典注释</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" name="comments" placeholder="字典注释" >
+                        <input type="text" class="form-control" name="comments" placeholder="字典注释" />
                     </div>
                     <label class="control-label">（输入类型是汉字、字母、数字、下划线或它们的组合，最长256位）</label>
                 </div>
@@ -37,10 +37,10 @@
 
                     <div class="col-sm-6">
                         <label class="radio-inline">
-                            <input type="radio" value=0 name="deleted" checked >有效
+                            <input type="radio" value="0" name="deleted" checked="checked" />有效
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" value=1 name="deleted">无效
+                            <input type="radio" value="1" name="deleted" />无效
                         </label>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
 
     $(function () {
         $('button[name="backToList"]').click(function (e) {
-            var url="/dict/list";
+            var url="/page/dict/dictList";
             $('#container').load(url);
 
         });
@@ -113,14 +113,14 @@
                         }
                     }
                 },
-                newDictValue: {
+                dictValue: {
                     message: 'name is not valid',
                     validators: {
                         notEmpty: {
                             message: '字典内容不能为空'
                         },
                         stringLength: {
-                            min: 3,
+                            min: 1,
                             max: 128,
                             message: '字典内容必须在3到128之间'
                         }
@@ -145,24 +145,24 @@
         });
 
         $('button[name="submit"]').click(function (e) {
-            var fallbackUrl = "/dict/list";
+            var fallbackUrl = "/page/dict/dictList";
             var dictKey = $('input[name="dictKey"]').val();
-            var newDictValue = $('input[name="newDictValue"]').val();
+            var dictValue = $('input[name="dictValue"]').val();
             var comments = $('input[name="comments"]').val();
             var deleted = $('input[name="deleted"]:checked').val();
-            if(dictKey==='' || newDictValue==='' || comments===''){
+            if(dictKey==='' || dictValue==='' || comments===''){
                 return;
             }
             var temp = {
                 dictKey: dictKey,
-                newDictValue: newDictValue,
+                dictValue: dictValue,
                 comments: comments,
                 deleted: deleted
             };
             var json = JSON.stringify(temp);
             $.ajax({
                 type:"post",
-                url: "/trcs/dict/addTransferDict",
+                url: "/rest/dict/addTransferDict",
                 contentType: "application/json;charset=UTF-8",
                 data: json,
                 dataType: "json",
