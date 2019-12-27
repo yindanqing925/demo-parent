@@ -21,9 +21,9 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Properties;
 
-@Configuration
+/*@Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = DataSourceConfig.SQL_SESSION_FACTORY)
+@MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = DataSourceConfig.SQL_SESSION_FACTORY)*/
 public class DataSourceConfig {
 
     // 唯一标识

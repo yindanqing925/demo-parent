@@ -1,5 +1,18 @@
-#configs:
-#  datasource:
-#    url: jdbc:mysql://192.168.165.128/nh?useUnicode=true&characterEncoding=utf-8
-#    username: nh
-#    password: 123456
+# jdbc_config   datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/datebook?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+    # Hikari will use the above plus the following to setup connection pooling
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle=5
+      maximum-pool-size=15
+      auto-commit=true
+      idle-timeout=30000
+      pool-name=DatebookHikariCP
+      max-lifetime=1800000
+      connection-timeout=30000
+      connection-test-query=SELECT 1
