@@ -197,6 +197,11 @@
                 <artifactId>javassist</artifactId>
                 <version>3.25.0-GA</version>
             </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.13</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
