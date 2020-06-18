@@ -3,6 +3,7 @@ package org.nh.gome.demo.algo;
 import com.alibaba.fastjson.JSON;
 
 /**
+ * 力扣27
  * @program: RemoveElementDemo.java
  * @description:
  * @author: yindanqing
