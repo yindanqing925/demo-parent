@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: mq-producer
+  profiles:
+    active: dev
+
+
+server:
+  port: 3301
+
+#configs:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml

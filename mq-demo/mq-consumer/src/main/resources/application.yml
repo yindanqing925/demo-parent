@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mq-consumer
+  profiles:
+    active: dev
+
+
+server:
+  port: 3300
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml
