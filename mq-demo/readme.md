@@ -1,7 +1,7 @@
 ## 未探索属性
 
 
-- PublisherConfirms
+- setPublisherConfirms
 - setChannelTransacted
 - setMandatory
 - ack
