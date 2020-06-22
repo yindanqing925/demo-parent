@@ -23,6 +23,8 @@ public class BusinessOneMqConfig {
         cachingConnectionFactory.setUsername("guest");
         cachingConnectionFactory.setPassword("123.gome");
         cachingConnectionFactory.setPort(5672);
+        cachingConnectionFactory.setPublisherConfirms(false);
+        cachingConnectionFactory.setPublisherReturns(false);
         return cachingConnectionFactory;
     }
 
@@ -33,7 +35,10 @@ public class BusinessOneMqConfig {
 
     @Bean
     public RabbitTemplate oneRabbitTemplate() {
-        return new RabbitTemplate(oneConnectionFactory());
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(oneConnectionFactory());
+        rabbitTemplate.setMandatory(false);
+        rabbitTemplate.setChannelTransacted(false);
+        return rabbitTemplate;
     }
 
 }
