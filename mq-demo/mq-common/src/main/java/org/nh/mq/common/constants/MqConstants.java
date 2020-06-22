@@ -20,6 +20,8 @@ public interface MqConstants {
 
     String DIRECT_QUEUE_WORK = "DIRECT_QUEUE_WORK";
 
+
+
     String FANOUT_EXCHANGE = "FANOUT_EXCHANGE";
 
     String FANOUT_EXCHANGE_ROUTINGKEY_LIFE = "FANOUT_LIFE";
