@@ -17,7 +17,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BusinessOneMqConfig {
 
-
     @Bean
     public ConnectionFactory oneConnectionFactory() {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
