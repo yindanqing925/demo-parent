@@ -1,0 +1,13 @@
+server:
+  port: 3366
+
+# Logger config
+logging:
+  config: classpath:log4j2.xml
+
+spring:
+  application:
+    name: rq-microservice
+
+file:
+  path: http://cdn.arraylist.cn/ReleaseQuarantine.xlsx

@@ -1,11 +1,8 @@
 spring:
-#  profiles:
-#    active: dev
+  profiles:
+    active: dev
   application:
     name: async
-
-server:
-  port: 6602
 
 # Logger config
 logging:

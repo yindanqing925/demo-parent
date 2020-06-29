@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="180" packages="">
+	<properties>
+		<property name="app.log">rq-microservice-3366</property>
+		<property name="LOG_HOME">/opt/logs/${sys:app.log}</property>
+		<property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %C %t (%F:%L) - %m%n</property>
+	</properties>
+	<Appenders>
+		<!--Console -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${PATTERN}" />
+		</Console>
+		<!-- When bufferedIO is true, this is the buffer size, the default is 8192 
+			bytes. -->
+		<RollingFile name="RollingFile" fileName="${LOG_HOME}.log"
+			filePattern="${LOG_HOME}.log.%d{yyyy-MM-dd}" append="true"
+			bufferedIO="true">
+			<PatternLayout pattern="${PATTERN}" />
+			<Filters>
+				<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY" />
+			</Filters>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+		</RollingFile>
+		
+		<!--异步appender -->
+		<Async name="AsyncAppender" includeLocation="true">
+			<AppenderRef ref="RollingFile" />
+		</Async>
+		
+	</Appenders>
+	<Loggers>
+		<Root level="INFO" includeLocation="true">
+			<AppenderRef ref="AsyncAppender" />
+			<!-- <AppenderRef ref="Logstash" /> -->
+			<AppenderRef ref="Console" />
+		</Root>
+		<Logger name="org.nh" level="DEBUG" additivity="false">
+			<AppenderRef ref="AsyncAppender" />
+			<appender-ref ref="Console"/>
+		</Logger>
+		<Logger name="org.springframework.boot" level="INFO" additivity="false">
+			<AppenderRef ref="AsyncAppender" />
+			<appender-ref ref="Console"/>
+		</Logger>
+		<Logger name="com.netflix.discovery.TimedSupervisorTask" level="OFF">
+		</Logger>
+	</Loggers>
+</Configuration>
