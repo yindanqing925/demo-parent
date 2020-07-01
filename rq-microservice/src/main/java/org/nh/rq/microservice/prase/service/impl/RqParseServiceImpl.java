@@ -26,6 +26,7 @@ public class RqParseServiceImpl implements RqParseService {
     @Override
     public String getRoomRqInfo(String roomNo) {
         try {
+            log.info("roomNo:{}", roomNo);
             InputStream inputStream = DownloadUtil.downLoadFromUrl(filePath);
             return ExcelUtil.getRoomRqInfo(inputStream, roomNo);
         } catch (Exception ex){
