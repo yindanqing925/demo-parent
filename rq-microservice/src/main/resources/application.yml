@@ -8,9 +8,6 @@ logging:
 spring:
   application:
     name: rq-microservice
-  key-store: classpath:ssl/ydq.luqinghe.com.jks
-  key-store-password: 5fa715dtzloz13
-  key-store-type: JKS
 
 file:
   path: http://cdn.arraylist.cn/ReleaseQuarantine.xlsx
