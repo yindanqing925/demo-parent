@@ -1,6 +1,6 @@
 package org.nh.rq.microservice.prase.controller;
 
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.web.ResponseResult;
 import org.nh.rq.microservice.prase.service.RqParseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

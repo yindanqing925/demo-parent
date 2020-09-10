@@ -1,10 +1,9 @@
 package org.nh.shiro.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.nh.common.datasource.common.DataSourceUtil;
+import org.nh.demo.common.datasource.common.DataSourceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
  * @program: ShiroDataSourceConfig.java

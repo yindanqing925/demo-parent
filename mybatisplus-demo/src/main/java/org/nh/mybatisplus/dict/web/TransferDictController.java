@@ -1,20 +1,18 @@
 package org.nh.mybatisplus.dict.web;
 
 
-import com.baomidou.mybatisplus.mapper.Condition;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.google.common.collect.Maps;
 import lombok.extern.log4j.Log4j2;
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.web.ResponseResult;
 import org.nh.mybatisplus.dict.domain.TransferDict;
 import org.nh.mybatisplus.dict.service.TransferDictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 

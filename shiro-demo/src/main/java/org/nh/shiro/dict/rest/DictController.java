@@ -1,7 +1,7 @@
 package org.nh.shiro.dict.rest;
 
 import com.github.pagehelper.PageInfo;
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.web.ResponseResult;
 import org.nh.shiro.dict.condition.ShiroDictListCond;
 import org.nh.shiro.dict.domian.ShiroDict;
 import org.nh.shiro.dict.service.ShiroDictService;

@@ -3,7 +3,7 @@ package org.nh.mybatisplus.config.datasource;
 import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.annotation.MapperScan;
-import org.nh.common.datasource.common.DataSourceUtil;
+import org.nh.demo.common.datasource.common.DataSourceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

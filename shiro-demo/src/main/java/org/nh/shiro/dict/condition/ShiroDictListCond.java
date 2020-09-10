@@ -1,6 +1,6 @@
 package org.nh.shiro.dict.condition;
 
-import org.nh.common.page.PageSortVo;
+import org.nh.demo.common.page.PageSortVo;
 
 /**
  * @program: ShiroDictListCond.java

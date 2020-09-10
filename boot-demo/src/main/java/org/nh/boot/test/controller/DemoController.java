@@ -1,9 +1,7 @@
 package org.nh.boot.test.controller;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.nh.common.exception.BusinessException;
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.exception.BusinessException;
+import org.nh.demo.common.web.ResponseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

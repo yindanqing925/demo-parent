@@ -1,6 +1,6 @@
 package org.nh.dynamic.user.controller;
 
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.web.ResponseResult;
 import org.nh.dynamic.config.datasource.way1.annotation.DataSource;
 import org.nh.dynamic.config.datasource.way1.pattern.DataSourceMode;
 import org.nh.dynamic.config.datasource.way1.pattern.DataSourceType;

@@ -87,7 +87,7 @@
             </dependency>
             <dependency>
                 <groupId>org.nh</groupId>
-                <artifactId>nh-common</artifactId>
+                <artifactId>demo-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -237,7 +237,8 @@
         <module>mybatisplus-demo</module>
         <module>mybatis-generators</module>
         <module>mq-demo</module>
-      <module>rq-microservice</module>
+        <module>rq-microservice</module>
+        <module>demo-common</module>
     </modules>
 
 

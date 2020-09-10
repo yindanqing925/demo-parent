@@ -1,6 +1,6 @@
 package org.nh.boot.user.controller;
 
-import org.nh.common.web.ResponseResult;
+import org.nh.demo.common.web.ResponseResult;
 import org.nh.service.base.user.model.User;
 import org.nh.service.base.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

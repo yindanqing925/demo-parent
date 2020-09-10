@@ -1,6 +1,6 @@
 package org.nh.boot.config;
 
-import org.nh.common.config.TomcatConfig;
+import org.nh.demo.common.config.TomcatConfig;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
