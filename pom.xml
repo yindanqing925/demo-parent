@@ -223,6 +223,11 @@
                 <artifactId>jmh-generator-annprocess</artifactId>
                 <version>1.23</version>
             </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.19.Final</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -239,6 +244,7 @@
         <module>mq-demo</module>
         <module>rq-microservice</module>
         <module>demo-common</module>
+        <module>netty-demo</module>
     </modules>
 
 
