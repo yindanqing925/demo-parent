@@ -23,12 +23,27 @@ public class RqParseServiceImpl implements RqParseService {
     @Value("${file.path}")
     private String filePath;
 
+    @Value("${file.check.path}")
+    private String fileCheckPath;
+
     @Override
     public String getRoomRqInfo(String roomNo) {
         try {
             log.info("roomNo:{}", roomNo);
             InputStream inputStream = DownloadUtil.downLoadFromUrl(filePath);
             return ExcelUtil.getRoomRqInfo(inputStream, roomNo);
+        } catch (Exception ex){
+            log.info(ExceptionUtils.getStackTrace(ex));
+        }
+        return null;
+    }
+
+    @Override
+    public String getCheckInfo(String idNo) {
+        try {
+            log.info("idNo:{}", idNo);
+            InputStream inputStream = DownloadUtil.downLoadFromUrl(fileCheckPath);
+            return ExcelUtil.getCheckInfo(inputStream, idNo);
         } catch (Exception ex){
             log.info(ExceptionUtils.getStackTrace(ex));
         }

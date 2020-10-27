@@ -22,6 +22,7 @@ import java.io.InputStream;
 public class ExcelUtil {
 
     private static final String NOTFOUND = "暂无该房间隔离信息";
+    private static final String NOTFOUND2 = "查询信息有误, 请重新输入";
 
     /**
      * 根据
@@ -42,6 +43,27 @@ public class ExcelUtil {
             }
         }
         return NOTFOUND;
+    }
+
+    /**
+     * 根据
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
+    public static String getCheckInfo(InputStream inputStream, String idNo) throws IOException {
+        Workbook workbook = new XSSFWorkbook(inputStream);
+        Sheet sheet = workbook.getSheetAt(0);
+        int lastRowNum = sheet.getLastRowNum();
+        for (int i = 1; i <= lastRowNum; i++){
+            Row row = sheet.getRow(i);
+            Cell cell = row.getCell(0);
+            String stringCellValue = cell.getStringCellValue();
+            if(idNo.equals(stringCellValue)){
+                return row.getCell(1).getStringCellValue();
+            }
+        }
+        return NOTFOUND2;
     }
 
 }

@@ -11,3 +11,5 @@ spring:
 
 file:
   path: http://cdn.arraylist.cn/ReleaseQuarantine.xlsx
+  check:
+    path: http://cdn.arraylist.cn/CheckInfo.xlsx

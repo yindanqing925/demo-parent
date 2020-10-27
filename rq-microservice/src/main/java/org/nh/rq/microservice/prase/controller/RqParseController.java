@@ -27,4 +27,10 @@ public class RqParseController {
         return new ResponseResult<String>(roomRqInfo);
     }
 
+    @RequestMapping(value = "/getCheckInfo/{idNo}", method = RequestMethod.GET)
+    public ResponseResult<String> getCheckInfo(@PathVariable(value = "idNo") String idNo){
+        String checkInfo = rqParseService.getCheckInfo(idNo);
+        return new ResponseResult<String>(checkInfo);
+    }
+
 }

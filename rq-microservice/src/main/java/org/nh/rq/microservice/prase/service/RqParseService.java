@@ -10,4 +10,6 @@ public interface RqParseService {
 
     String getRoomRqInfo(String roomNo);
 
+    String getCheckInfo(String idNo);
+
 }
