@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @program: TopKPartitionSort.java
- * @description:
+ * @description: 快排
  * @author: yindanqing
  * @create: 2020/12/7 19:00
  */
